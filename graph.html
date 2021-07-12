@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<div id="mydiv">
+	<h1>Enter your semester grades to get a graph</h1>
+	<label>SEM1 :</label>
+	<input type="number" name="num" value="0"> _ _ _
+	<label>SEM2 :</label>
+	<input type="number" name="num" value="0"><br><br>
+	<label>SEM3 :</label>
+	<input type="number" name="num" value="0"> _ _ _
+	<label>SEM4 :</label>
+	<input type="number" name="num" value="0"><br><br>
+	<label>SEM5 :</label>
+	<input type="number" name="num" value="0"> _ _ _
+	<label>SEM6 :</label>
+	<input type="number" name="num" value="0"><br><br>
+	<input type="submit" name="click" onclick="thing()">
+</div>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script>
+	var xArray = [1,2,3,4,5,6];
+    var yArray = [];//[9.38,9.69,9.78,9.13,8.92,9.04,9.04,9.04];
+	function thing(argument) {
+	  var names = document.getElementsByName('num'); 
+      for (var i = 0; i < names.length; i++) { s
+      yArray[i] = names.item(i).value;
+    } 
+    var mi = Math.min.apply(Math,yArray);    
+    var ma = Math.max.apply(Math,yArray); 
+    mi = Math.floor(mi);
+    ma = Math.ceil(ma);   
+
+var data = [{
+  x: xArray,
+  y: yArray,
+  mode:"lines"
+}];
+
+var layout = {
+  xaxis: {range: [0, 6], title: "Semesters"},
+  yaxis: {range: [mi, ma], title: "Grades"},  
+  title: "Semester Grades Graph"
+};
+
+Plotly.newPlot("myPlot", data, layout);
+	}
+
+</script>
+</body>
+</html>

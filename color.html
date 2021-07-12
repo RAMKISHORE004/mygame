@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Guessing Name</title>
+	    <style type="text/css">
+	    	.container{
+	    		display: flex;	
+	    	}
+	    	.con{
+	    		float: left;
+	    		margin-left: 20px;
+	    	}
+	    	.co{
+	    		padding-top: 20px;
+	    		padding-left: 350px;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<center><h1 id="head">I WILL GUESS YOUR NAME</h1></center>
+		Table 1:
+		<table border="2" style="width:100%">
+			<tr>
+				<td>A</td> <td>_</td> <td>C</td> <td>_</td> <td>E</td>
+				<td>_</td> <td>G</td> <td>_</td> <td>I</td> <td>_</td>
+				<td>K</td> <td>_</td> <td>M</td> <td>_</td> <td>O</td>
+				<td>_</td> <td>Q</td> <td>_</td> <td>S</td> <td>_</td>
+				<td>U</td> <td>_</td> <td>W</td> <td>_</td> <td>Y</td> <td>_</td>
+			</tr>
+		</table><br>
+		Table 2:
+		<table border="2" style="width:100%">
+			<tr>
+				<td>_</td> <td>B</td> <td>C</td> <td>_</td> <td>_</td>
+				<td>F</td> <td>G</td> <td>_</td> <td>_</td> <td>J</td>
+				<td>K</td> <td>_</td> <td>_</td> <td>N</td> <td>O</td>
+				<td>_</td> <td>_</td> <td>R</td> <td>S</td> <td>_</td>
+				<td>_</td> <td>V</td> <td>W</td> <td>_</td> <td>_</td> <td>Z</td>
+			</tr>
+		</table><br>
+		Table 3:
+		<table border="2" style="width:100%">
+			<tr>
+				<td>_</td> <td>_</td> <td>_</td> <td>D</td> <td>E</td>
+				<td>F</td> <td>G</td> <td>_</td> <td>_</td> <td>_</td>
+				<td>_</td> <td>L</td> <td>M</td> <td>N</td> <td>O</td>
+				<td>_</td> <td>_</td> <td>_</td> <td>_</td> <td>T</td>
+				<td>U</td> <td>V</td> <td>W</td> <td>_</td> <td>_</td> <td>_</td>
+			</tr>
+		</table><br>
+		Table 4:
+		<table border="2" style="width:100%">
+			<tr>
+				<td>_</td> <td>_</td> <td>_</td> <td>_</td> <td>_</td>
+				<td>_</td> <td>_</td> <td>H</td> <td>I</td> <td>J</td>
+				<td>K</td> <td>L</td> <td>M</td> <td>N</td> <td>O</td>
+				<td>_</td> <td>_</td> <td>_</td> <td>_</td> <td>_</td>
+				<td>_</td> <td>_</td> <td>_</td> <td>X</td> <td>Y</td> <td>Z</td>
+			</tr>
+		</table><br>
+		Table 5:
+		<table border="2" style="width:100%">
+			<tr>
+				<td>_</td> <td>_</td> <td>_</td> <td>_</td> <td>_</td>
+				<td>_</td> <td>_</td> <td>_</td> <td>_</td> <td>_</td>
+				<td>_</td> <td>_</td> <td>_</td> <td>_</td> <td>_</td>
+				<td>P</td> <td>Q</td> <td>R</td> <td>S</td> <td>T</td>
+				<td>U</td> <td>V</td> <td>W</td> <td>X</td> <td>Y</td> <td>Z</td>
+			</tr>
+		</table><br>
+		<p id="mydiv"></p>
+		<div id="whole">
+	    	<p id="demo"><b>Enter Number of Letters in your Name:</b><br>
+	    		<input type="text" id="numr" name="num" value="0"><button id="sub">Continue</button><br><br>
+	    		Next select Tables that contains first letter of your name:
+	    	</p><br>
+	    	<div class="container" id="cont">
+	    		<div class="con">
+	    			<input type="checkbox" name="color" value="1"> Table1<br>
+	    			<table border="2">
+						<tr> <td>A</td>  <td>__</td> <td>C</td>  <td>__</td> <td>E</td>              </tr>
+						<tr> <td>__</td> <td>G</td>  <td>__</td> <td>I</td>  <td>__</td>             </tr>
+						<tr> <td>K</td>  <td>__</td> <td>M</td>  <td>__</td> <td>O</td>              </tr>
+						<tr> <td>__</td> <td>Q</td>  <td>__</td> <td>S</td>  <td>__</td>             </tr>
+						<tr> <td>U</td>  <td>__</td> <td>W</td>  <td>__</td> <td>Y</td>  <td>__</td> </tr>
+					</table>
+	    		</div>
+	    		<div class="con">
+	    			<input type="checkbox" name="color" value="2"> Table2<br>
+	    			<table border="2">
+						<tr> <td>__</td> <td>B</td>  <td>C</td>  <td>__</td> <td>__</td>            </tr>
+						<tr> <td>F</td>  <td>G</td>  <td>__</td> <td>__</td> <td>J</td>             </tr>
+						<tr> <td>K</td>  <td>__</td> <td>__</td> <td>N</td>  <td>O</td>             </tr>
+						<tr> <td>__</td> <td>__</td> <td>R</td>  <td>S</td>  <td>__</td>            </tr>
+						<tr> <td>__</td> <td>V</td>  <td>W</td>  <td>__</td> <td>__</td> <td>Z</td> </tr>
+					</table>
+	    		</div>
+	    		<div class="con">
+	    			<input type="checkbox" name="color" value="3"> Table3<br>
+	    			<table border="2">
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>D</td>  <td>E</td>              </tr>
+						<tr> <td>F</td>  <td>G</td>  <td>__</td> <td>__</td> <td>__</td>             </tr>
+						<tr> <td>__</td> <td>L</td>  <td>M</td>  <td>N</td>  <td>O</td>              </tr>
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>__</td> <td>T</td>              </tr>
+						<tr> <td>U</td>  <td>V</td>  <td>W</td>  <td>__</td> <td>__</td> <td>__</td> </tr>
+					</table>
+	    		</div>
+	    		<div class="con">
+	    			<input type="checkbox" name="color" value="4"> Table4<br>
+	    			<table border="2" >
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>__</td> <td>__</td>           </tr>
+						<tr> <td>__</td> <td>__</td> <td>H</td>  <td>I</td>  <td>J</td>            </tr>
+						<tr> <td>K</td>  <td>L</td>  <td>M</td>  <td>N</td>  <td>O</td>            </tr>
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>__</td> <td>__</td>           </tr>
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>X</td>  <td>Y</td> <td>Z</td> </tr>
+					</table>
+	    		</div>
+	    		<div class="con">
+	    			<input type="checkbox" name="color" value="5"> Table5<br>
+	    			<table border="2">
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>__</td> <td>__</td>            </tr>
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>__</td> <td>__</td>            </tr>
+						<tr> <td>__</td> <td>__</td> <td>__</td> <td>__</td> <td>__</td>            </tr>
+						<tr> <td>P</td>  <td>Q</td>  <td>R</td>  <td>S</td>  <td>T</td>             </tr>
+						<tr> <td>U</td>  <td>V</td>  <td>W</td>  <td>X</td>  <td>Y</td>  <td>Z</td> </tr>
+					</table>
+	    		</div>
+			</div>
+			<div class="co">
+	    		<button id="btn">Continue</button>
+	    	</div>
+	    	<p id="op"></p>
+	    </div>
+	    <script type="text/javascript">
+	    	var num=0,qwerty=0,cou=1,q='',t='';
+	    	var na=['','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','next'];
+
+	    	const btn1 = document.querySelector('#sub');
+			btn1.addEventListener('click', (event) => {
+	    		num=Number(document.getElementById('numr').value);
+	    		if(num==0)
+	    			alert("* Please Enter Number of Letters in your name *");
+	    		else{
+	    			alert("* Now Select Tables*");
+	    			for(var o=0;o<num;o++)
+	    				t=t+"_ ";
+	    		    document.getElementById('op').innerHTML="<h2>Your name may be --- "+t+"</h2";
+	    		}
+			});
+
+	    	function getSelectedCheckboxValues(name) {
+	    		const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+	    		let values = [];
+	    		checkboxes.forEach((checkbox) => {
+	        		values.push(Number(checkbox.value));
+	    		});
+	    		var s=0,d=[1,2,4,8,16];
+	    		for(var i=0;i<values.length;i++)
+	    			s=s+d[values[i]-1];
+	    		return s;
+			}
+
+			const btn = document.querySelector('#btn');
+			btn.addEventListener('click', (event) => {
+				if(num==0){
+					alert("* Please Enter Number of Letters in your name *");
+					var items=document.getElementsByName('color');
+					for(var i=0; i<items.length; i++){
+						if(items[i].type=='checkbox')
+							items[i].checked=false;
+					}
+					return;
+				}
+				var qwerty=getSelectedCheckboxValues('color');
+				if(qwerty==0){
+					alert("* Please select Tables *");
+					return;
+				}
+	    		alert("* Tables selected *");
+	    		var res = String.fromCharCode(64+qwerty);
+	    		q=q+res;
+	    		document.getElementById('op').innerHTML="<h2>Your name may be --- "+q+"</h2";
+	    		if (cou>10)
+	    			document.getElementById('demo').innerHTML="Next select Tables that contains "+na[10]+" letter of your name:";
+	        	else
+	    			document.getElementById('demo').innerHTML="Next select Tables that contains "+na[cou]+" letter of your name:";
+	    		cou=cou+1;
+	    		if (cou>num){
+	    			document.getElementById('mydiv').innerHTML="<h1>Hello! "+q+"</h1>";
+	    			document.getElementById('head').innerHTML="I GUESSED YOUR NAME "+q;
+	    			document.getElementById('whole').innerHTML=" ";
+	    			return ;
+	    		}
+	    		var items=document.getElementsByName('color');
+				for(var i=0; i<items.length; i++){
+					if(items[i].type=='checkbox')
+						items[i].checked=false;
+				}
+			});
+	    </script>
+	</body>
+</html>

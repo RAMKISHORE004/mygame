@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attendence</title>
+	<style type="text/css">
+		.head{
+			font-size: 1.5em;
+		}
+		td{
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="block1">
+<h2>Enter details:</h2>
+<table>
+	<tr>
+		<td class="head">Name:</td>
+		<td id="name"><input type="text" name="names" id="nme"></td>
+	</tr>
+	<tr>
+		<td class="head">Section:</td>
+		<td id="sec"><input type="text" name="secs" id="scs"></td>
+	</tr>
+	<tr>
+		<td class="head">Number of classes attended:</td>
+		<td id="attend"><input type="number" name="attends" id="atend"></td>
+	</tr>
+	<tr>
+		<td class="head">Number of classes not attended:</td>
+		<td id="not_attend"><input type="number" name="not_attends" id="notatend"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><button id="btn">SUBMIT</button></td>
+	</tr>
+</table>
+</div>
+<div id="block3">
+	<h2>Extra</h2>
+	<table>
+		<tr>
+			<td class="head">Total classes:</td>
+			<td><input type="number" name="to" id="tot"></td>
+		</tr>
+		<tr>
+			<td class="head">How much percentage you need:</td>
+			<td><input type="number" name="need" id="improve"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button id="btn1">SUBMIT</button></td>
+		</tr>
+	</table>
+ </div>
+</body>
+<script type="text/javascript">
+	var attend,notattend;
+	const btn = document.querySelector('#btn');
+			btn.addEventListener('click', (event) => {
+	    		const name=document.getElementById('nme').value;
+	    		var sec=document.getElementById('scs').value;
+	    		attend=Number(document.getElementById('atend').value);
+	    		notattend=Number(document.getElementById('notatend').value);
+
+	    		var at=attend/(attend+notattend)*100;
+	    		at=at.toPrecision(2);//Math.round(at);
+	    		if(attend<0 || notattend<0){
+	    			alert('Enter positive values');
+	    			return;
+	    		}
+	    		if (attend==0)
+	    			at=0;
+	    		if(notattend==0)
+	    			at=100
+	    		document.getElementById('block1').innerHTML='<div id="block2"><h1>Attendence Record of student</h1><table border="1"><tr><td class="head">Name:</td><td id="name">'+name.toUpperCase()+'</td></tr><tr><td class="head">Section:</td><td id="sec">'+sec+'</td></tr><tr><td class="head">Number of classes attended:</td><td id="attend">'+attend+'</td></tr><tr><td class="head">Number of classes not attended:</td><td id="not_attend">'+notattend+'</td></tr><tr><td class="head">Total class for now:</td><td id="attendence">'+(attend+notattend)+'</td></tr><tr><td class="head">Attendence:</td><td id="attendence">'+at+'%</td></tr></table></div>';
+			});
+
+	const btn1 = document.querySelector('#btn1');
+	try{
+	btn1.addEventListener('click', (event) => {
+		var total=Number(document.getElementById('tot').value);
+		var im=Number(document.getElementById('improve').value);
+		var toget=(im/100)*total-attend;
+		toget=Math.round(toget);
+		if(total==0){
+			alert('Enter Attend values');
+			return;
+		}
+		if(toget>(total-(attend+notattend))){
+			alert('no u cannot get '+im+'%')
+		}
+		else{
+			if(toget<0)
+				alert('no u cannot get '+im+'%')
+			else
+			document.getElementById('block3').innerHTML='<div id="block2"><table><tr><td class="head">Attend '+toget+' more classes to get '+im+'%</td></tr></table></div>';
+		}
+	});
+    }
+    	catch(e){
+    		console.log('yes good');
+	}
+</script>
+</html>

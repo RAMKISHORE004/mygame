@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>SNo</th>
+			<th>Subject name</th>
+			<th>Credit point</th>
+			<th>Grade</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><input type="text" name="sub"></td> 
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><input type="text" name="sub"></td>
+			<td><input type="number" name="num1" value="0"></td>
+			<td><input type="text" name="num2"></td>
+		</tr>
+	</table><br>
+	<input type="submit" name="click" onclick="thing()"><br>
+	<div id="mydiv"></div><br>
+	<div>
+		<table>
+			<tr>
+			<th>Semester</th>
+			<th>Grade</th>
+		    </tr>
+		    <tr>
+		    	<td>1</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>2</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>3</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>4</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>5</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>6</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>7</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		    <tr>
+		    	<td>8</td>
+		    	<td><input type="number" name="num3" value="0"></td>
+		    </tr>
+		</table>
+	</div>
+	<input type="submit" name="click" onclick="those()"><br>
+	<div id="mydivs"></div><br>
+<script type="text/javascript">
+	var credits=[];
+	var grades=[];
+	var count = 0;
+	var s = 0;
+	var tot = 0;
+	function thing(argument) {
+	  var credit = document.getElementsByName('num1'); 
+      for (var i = 0; i < credit.length; i++) { 
+      	if(credit.item(i).value==0)
+      		break
+      credits[i] = credit.item(i).value;
+      tot=tot+parseInt(credits[i]);
+      count=count+1;
+    } 
+	var grade = document.getElementsByName('num2'); 
+      for (var i = 0; i < count; i++) { 
+      	var x = grade.item(i).value;
+      	if(x=='O' || x=='o')
+      		 grades[i] = 10;
+      	else if(x=='A+' || x=='a+')
+      		grades[i] = 9;
+      	else if(x=='A' || x=='a')
+      		grades[i] = 8;
+      	else if(x=='B+' || x=='b+')
+      		grades[i] = 7;
+      	else if(x=='B' || x=='b')
+      		grades[i] = 6;
+      	else if(x=='C' || x=='c')
+      		grades[i] = 5;
+      	else if(x=='P' || x=='p')
+      		grades[i] = 4;
+    } 
+    for (var i = 0; i < count; i++) {
+    	s=s+credits[i]*grades[i];
+    }
+    var av = s/tot
+    document.getElementById('mydiv').innerHTML='<h1>Your gpa is = '+av+'</h1>';
+	}
+	var grad = [];
+	function those(argument) {
+		count = 0;
+		var val = document.getElementsByName('num3'); 
+      for (var i = 0; i < val.length; i++) { 
+      	if(val.item(i).value==0)
+      		break
+      grad[i] = parseFloat(val.item(i).value);
+      count=count+1;
+    } 
+		var sum = grad.reduce(function(a, b){
+            return a + b;
+        }, 0);
+
+        var avg = sum/count;
+        document.getElementById('mydivs').innerHTML='<h1>Your cgpa is = '+avg+'</h1>';
+	}
+	</script>
+</body>
+</html>
